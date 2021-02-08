@@ -5,21 +5,23 @@ const realEthers = EthersLib.ethers;
 
 let loot;
 
-describe("Loot", function () {
+describe("StableYield", function () {
   beforeEach(async function () {
-    // deploy Loot
-    const LootToken = await ethers.getContractFactory("LootToken");
+    // deploy StableYield
+    const LootToken = await ethers.getContractFactory(
+      "StableYieldVaultWithCreditDelegation"
+    );
     loot = await LootToken.deploy();
     await loot.deployed();
   });
 
-  describe("Loot Token tests", function () {
+  describe("StableYield tests", function () {
     it("should have correct params set", async function () {
       const name = await loot.name();
-      expect(name).equal("Loot Token");
+      expect(name).equal("StableYieldVault");
 
       const symbol = await loot.symbol();
-      expect(symbol).equal("LOOT");
+      expect(symbol).equal("SYV");
     });
   });
 });

@@ -12,8 +12,6 @@ import "./tokens/ERC20.sol";
 import "./StableYieldVaultBase.sol";
 import "./StableYieldVaultGovernance.sol";
 
-// import "hardhat/console.sol";
-
 // ERC20,
 contract StableYieldVaultWithCreditDelegation is
     ERC20,
